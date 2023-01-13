@@ -14,11 +14,9 @@ describe('AppController', () => {
   })
 
   describe('getData', () => {
-    it('should return "Welcome to two-step!"', () => {
+    it('should return "Welcome to two-step-api!"', () => {
       const appController = app.get<AppController>(AppController)
-      expect(appController.getData()).toEqual({
-        message: 'Welcome to two-step!',
-      })
+      expect(appController.getData()).toEqual({ message: 'Welcome to two-step-api!' })
     })
   })
 })

@@ -14,8 +14,8 @@ describe('AppService', () => {
   })
 
   describe('getData', () => {
-    it('should return "Welcome to two-step!"', () => {
-      expect(service.getData()).toEqual({ message: 'Welcome to two-step!' })
+    it('should return "Welcome to two-step-api!"', () => {
+      expect(service.getData()).toEqual({ message: 'Welcome to two-step-api!' })
     })
   })
 })
