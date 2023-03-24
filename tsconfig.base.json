@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@two-step/core": ["libs/core/src/index.ts"]
+      "@two-step/core": ["libs/core/src/index.ts"],
+      "@two-step/entities": ["libs/entities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
