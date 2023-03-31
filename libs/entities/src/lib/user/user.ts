@@ -1,45 +1,45 @@
-import { Field, ObjectType } from '@nestjs/graphql';
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument, Schema as MongooseSchema } from 'mongoose';
+import { Field, ObjectType } from '@nestjs/graphql'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { HydratedDocument, Schema as MongooseSchema } from 'mongoose'
 
-export type UserDocument = HydratedDocument<User>;
+export type UserDocument = HydratedDocument<User>
 
 @Schema()
 @ObjectType()
 export class User {
   @Prop()
   @Field(() => String)
-  _id: string;
+  _id: string
 
   @Prop({
-    required: true
+    required: true,
   })
   @Field(() => String, { description: 'User first name' })
-  firstName: string;
+  firstName: string
 
   @Prop({
-    required: true
+    required: true,
   })
   @Field(() => String, { description: 'User last name' })
-  lastName: string;
+  lastName: string
 
   @Prop({
-    required: false
+    required: false,
   })
   @Field(() => String, { description: 'User middle name', nullable: true })
-  middleName?: string;
+  middleName?: string
 
   @Prop({
-    required: true
+    required: true,
   })
   @Field(() => Number, { description: 'Age of user', nullable: false })
-  age: number;
+  age: number
 
   @Prop({
-    required: true
+    required: true,
   })
   @Field(() => String, { description: 'secure af', nullable: false })
-  password: string;
+  password: string
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const UserSchema = SchemaFactory.createForClass(User)

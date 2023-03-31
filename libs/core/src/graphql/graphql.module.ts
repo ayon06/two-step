@@ -1,7 +1,7 @@
-import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
+import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
+import { GraphQLModule } from '@nestjs/graphql'
+import { join } from 'path'
 
 @Module({
   imports: [
@@ -9,8 +9,8 @@ import { join } from 'path';
       autoSchemaFile: true,
       driver: ApolloDriver,
       playground: true,
-      debug: true
+      debug: true,
     }),
-  ]
+  ],
 })
-export class GraphqlModule { }
+export class GraphqlModule {}
