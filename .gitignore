@@ -40,4 +40,4 @@ Thumbs.db
 
 # local settings
 .env
-firebase.config.ts
+firebase.config.json
