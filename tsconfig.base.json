@@ -18,7 +18,9 @@
       "@two-step/core": ["libs/core/src/index.ts"],
       "@two-step/entities": ["libs/entities/src/index.ts"],
       "@two-step/two-step-components": ["libs/two-step-components/src/index.ts"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "exclude": ["node_modules", "tmp"]
 }

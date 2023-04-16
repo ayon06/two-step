@@ -32,14 +32,22 @@ export class User {
   @Prop({
     required: true,
   })
-  @Field(() => Number, { description: 'Age of user', nullable: false })
-  age: number
+  @Field(() => Date, { description: 'Birth date of user', nullable: false })
+  birthDate: Date
 
   @Prop({
     required: true,
   })
-  @Field(() => String, { description: 'secure af', nullable: false })
-  password: string
+  @Field(() => String, { description: 'Name that will be displayed in-app', nullable: false })
+  displayName: string
+
+  @Prop({
+    required: false,
+  })
+  @Field(() => String, { description: 'primary phone number', nullable: true })
+  phoneNumber: string
+  @Field(() => String, { description: 'primary email address', nullable: false })
+  email: string
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)

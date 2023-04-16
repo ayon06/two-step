@@ -1,22 +1,13 @@
-import { useQuery } from '@apollo/client'
-import { graphql } from '../../shared/types/generated-queries'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 
-const getUsersQuery = graphql(`
-  query getAllUsers {
-    users {
-      firstName
-      _id
-    }
-  }
-`)
+export const registerNewUser = async (email: string, password: string) => {
+  const auth = getAuth()
+  const result = await createUserWithEmailAndPassword(auth, email, password)
+  return result.user
+}
 
-export const useGetUsers = () => {
-  const { refetch, data, loading, error } = useQuery(getUsersQuery)
-
-  return {
-    refetch,
-    data,
-    loading,
-    error,
-  }
+export const signInWithUsernamePassword = async (email: string, password: string) => {
+  const auth = getAuth()
+  const result = await signInWithEmailAndPassword(auth, email, password)
+  return result.user
 }

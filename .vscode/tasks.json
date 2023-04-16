@@ -1,0 +1,48 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Client Serve",
+      "type": "npm",
+      "script": "serve:client",
+      "presentation": {
+        "panel": "shared",
+        "group": "localServe",
+        "echo": true,
+        "reveal": "always"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "API Serve",
+      "type": "npm",
+      "script": "serve:api",
+      "presentation": {
+        "panel": "shared",
+        "group": "localServe",
+        "echo": true,
+        "reveal": "always"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Codegen Watch",
+      "type": "npm",
+      "script": "watch:codegen",
+      "group": "none",
+      "presentation": {
+        "panel": "shared",
+        "group": "localServe",
+        "echo": true,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Serve",
+      "dependsOn": ["Client Serve", "API Serve", "Codegen Watch"],
+      "problemMatcher": []
+    }
+  ]
+}
