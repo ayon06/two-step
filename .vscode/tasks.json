@@ -31,7 +31,6 @@
       "label": "Codegen Watch",
       "type": "npm",
       "script": "watch:codegen",
-      "group": "none",
       "presentation": {
         "panel": "shared",
         "group": "localServe",
